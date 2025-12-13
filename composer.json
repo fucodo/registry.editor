@@ -8,10 +8,7 @@
         "fucodo/registry": "*",
         "kaystrobach/backend": "*"
     },
-	"suggest": {
-		"fucodo/registry-editor": "*"
-	},
-	"autoload": {
+    "autoload": {
         "psr-4": {
             "fucodo\\registry\\editor\\": "Classes/"
         }
