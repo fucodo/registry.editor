@@ -6,7 +6,7 @@
         "neos/eel": "*",
         "neos/flow": "*",
         "fucodo/registry": "*",
-        "KayStrobach/Backend": "*"
+        "kaystrobach/backend": "*"
     },
 	"suggest": {
 		"fucodo/registry-editor": "*"
