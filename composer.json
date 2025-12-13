@@ -1,0 +1,24 @@
+{
+    "description": "",
+    "type": "neos-package",
+    "name": "fucodo/registry-editor",
+    "require": {
+        "neos/eel": "*",
+        "neos/flow": "*",
+        "fucodo/registry": "*",
+        "KayStrobach/Backend": "*"
+    },
+	"suggest": {
+		"fucodo/registry-editor": "*"
+	},
+	"autoload": {
+        "psr-4": {
+            "fucodo\\registry\\editor\\": "Classes/"
+        }
+    },
+    "extra": {
+        "neos": {
+            "package-key": "fucodo.registry.editor"
+        }
+    }
+}

@@ -1,0 +1,68 @@
+<html lang="de" xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+      xmlns:b="http://typo3.org/ns/KayStrobach/Backend/ViewHelpers"
+      xmlns:i="http://typo3.org/ns/KayStrobach/IconRegistry/ViewHelpers"
+      xmlns:r="http://typo3.org/ns/fucodo/registry/ViewHelpers"
+      data-namespace-typo3-fluid="true"
+>
+
+<b:be.setTitle>Einstellungen</b:be.setTitle>
+
+<table class="table table-striped table-hover">
+    <cols>
+        <col class="w-25">
+        <col class="w-25">
+        <col class="w-25">
+        <col class="w-25">
+        <col class="w-25">
+    </cols>
+    <thead>
+        <tr>
+            <th>
+                Namespace
+            </th>
+            <th>
+                Option
+            </th>
+            <th class="w-25">
+                Default
+            </th>
+            <th class="w-25">
+                Aktuell
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <f:for each="{items}" as="itemNamespaceContent" key="itemNamespaceName">
+            <f:for each="{itemNamespaceContent}" as="itemContent" key="itemName">
+                <f:variable name="defaultValue">{itemContent.default}</f:variable>
+                <f:variable name="currentValue">{r:registryValue(namespace: itemNamespaceName, name: itemName)}</f:variable>
+                <tr class="position-relative">
+                    <td>
+                        {itemNamespaceName}
+                    </td>
+                    <td>
+                        <f:link.action action="edit" arguments="{dto:{namespace:itemNamespaceName, name:itemName}}" class="stretched-link">
+                            {itemName}
+                        </f:link.action>
+                    </td>
+                    <td>
+                        <div class="w-100 overflow-hidden" style="max-width: 250px;">
+                            <code><pre>{defaultValue -> f:format.json()}</pre></code>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="w-100 overflow-hidden" style="max-width: 250px;">
+                            <code><pre>{currentValue -> f:format.json()}</pre></code>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="w-100 overflow-hidden">
+                            <code><pre>./flow registry:set "{itemNamespaceName}" "{itemName}"</pre></code>
+                        </div>
+                    </td>
+                </tr>
+            </f:for>
+        </f:for>
+    </tbody>
+
+</table>

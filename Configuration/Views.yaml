@@ -1,0 +1,9 @@
+-
+  requestFilter: 'isPackage("fucodo.registry.editor") && isFormat("html")'
+  options:
+    layoutRootPaths:
+      'fucodo.registry.editor/Layouts':  'resource://fucodo.registry.editor/Private/Layouts'
+    partialRootPaths:
+      'fucodo.registry.editor/Partials':    'resource://fucodo.registry.editor/Private/Partials'
+      'KayStrobach.VisualSearch/Partials':  'resource://KayStrobach.VisualSearch/Private/Partials'
+      'KayStrobach.Bootstrap':                           'resource://KayStrobach.Bootstrap/Private/Partials'

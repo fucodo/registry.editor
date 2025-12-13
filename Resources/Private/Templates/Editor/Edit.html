@@ -1,0 +1,29 @@
+<html lang="de" xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+      xmlns:b="http://typo3.org/ns/KayStrobach/Backend/ViewHelpers"
+      xmlns:i="http://typo3.org/ns/KayStrobach/IconRegistry/ViewHelpers"
+      xmlns:r="http://typo3.org/ns/fucodo/registry/ViewHelpers"
+      data-namespace-typo3-fluid="true"
+>
+
+<b:be.setTitle>Bearbeiten </b:be.setTitle>
+
+<b:be.button.closeButton />
+<b:be.button.saveButton />
+
+<f:form action="updateSetting" object="{dto}" objectName="dto" id="globalForm">
+    <f:render partial="Components/Panel" arguments="{heading:'Einstellung bearbeiten'}" contentAs="body">
+        <f:form.hidden property="namespace" />
+        <f:form.hidden property="name" />
+        <f:render partial="Form/{dto.type}" arguments="{property:'value', label:dto.label, hint:dto.default}" />
+
+        <f:if condition="{dto.description}">
+            <div class="alert alert-info">
+                {dto.description}
+            </div>
+        </f:if>
+
+
+    </f:render>
+
+
+</f:form>

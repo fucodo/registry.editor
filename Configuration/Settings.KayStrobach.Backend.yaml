@@ -1,0 +1,15 @@
+KayStrobach:
+  Backend:
+    Backend:
+      Menu:
+        Security:
+          subItems:
+            registry:
+              label: 'Einstellungen'
+              icon: 'bootstrap-gear'
+              iconBackground: '#33006F'
+              package: fucodo.registry.editor
+              controller: Editor
+              action: index
+              position: end
+
