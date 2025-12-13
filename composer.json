@@ -20,5 +20,6 @@
         "neos": {
             "package-key": "fucodo.registry.editor"
         }
-    }
+    },
+    "license": "MIT"
 }
