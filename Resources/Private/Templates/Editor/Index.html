@@ -33,7 +33,7 @@
     </thead>
     <tbody>
         <f:for each="{items}" as="itemNamespaceContent" key="itemNamespaceName">
-            <f:for each="{itemNamespaceContent}" as="itemContent" key="itemName">
+            <f:for each="{itemNamespaceContent.items}" as="itemContent" key="itemName">
                 <f:variable name="defaultValue">{itemContent.default}</f:variable>
                 <f:variable name="currentValue">{r:registryValue(namespace: itemNamespaceName, name: itemName)}</f:variable>
                 <tr class="position-relative">

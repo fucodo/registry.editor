@@ -69,22 +69,22 @@ class EntryDto implements \JsonSerializable
 
     public function getLabel(): string
     {
-        return $this->options[$this->namespace][$this->name]['label'] ?? $this->getIdentifier();
+        return $this->options[$this->namespace]['items'][$this->name]['label'] ?? $this->getIdentifier();
     }
 
     public function getDescription(): string
     {
-        return $this->options[$this->namespace][$this->name]['description'] ?? '';
+        return $this->options[$this->namespace]['items'][$this->name]['description'] ?? '';
     }
 
     public function getType(): string
     {
-        return $this->options[$this->namespace][$this->name]['type'] ?? 'Text';
+        return $this->options[$this->namespace]['items'][$this->name]['type'] ?? 'Text';
     }
 
     public function getDefault(): string
     {
-        return $this->options[$this->namespace][$this->name]['default'] ?? '';
+        return $this->options[$this->namespace]['items'][$this->name]['default'] ?? '';
     }
 
 
