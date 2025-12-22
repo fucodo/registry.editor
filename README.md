@@ -36,7 +36,7 @@ The editor consumes these for UI rendering. The runtime merge and resolution rul
 fucodo:
   registry:
     defaults:
-      KayStrobach.Invoice.NormalInvoiceSettings:    # <--- the namespace
+      KayStrobach_Invoice_NormalInvoiceSettings:    # <--- the namespace
         title:                                    # <--- the key
           type: Text                            # <--- the field type, should be Text
           label:                                # <--- the label (human readable)
