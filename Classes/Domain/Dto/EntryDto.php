@@ -27,6 +27,16 @@ class EntryDto implements \JsonSerializable
      */
     public ?string $value;
 
+    protected array $allowedTypes = [
+        'Color',
+        'Date',
+        'DateTime',
+        'Number',
+        'Telefon',
+        'Text',
+        'Textarea',
+    ];
+
     public function __construct(
         string $namespace,
         string $name,
@@ -79,7 +89,12 @@ class EntryDto implements \JsonSerializable
 
     public function getType(): string
     {
-        return $this->options[$this->namespace]['items'][$this->name]['type'] ?? 'Text';
+        $type = $this->options[$this->namespace]['items'][$this->name]['type'] ?? 'Text';
+        if (!in_array($type, $this->allowedTypes)) {
+            $type = 'Text';
+        }
+
+        return $type;
     }
 
     public function getDefault(): string
