@@ -13,6 +13,7 @@ privilegeTargets:
 
 roles:
   'fucodo.registry.editor:Editor':
+    abstract: 1
     privileges:
       -
         privilegeTarget: fucodo_registry_editor_EditorController
