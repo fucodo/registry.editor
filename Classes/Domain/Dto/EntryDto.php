@@ -10,7 +10,7 @@ class EntryDto implements \JsonSerializable
      * @Flow\InjectConfiguration(package="fucodo.registry", path="defaults")
      * @var array
      */
-    protected ?array $options;
+    protected ?array $options = [];
 
     /**
      * @var string
@@ -103,8 +103,16 @@ class EntryDto implements \JsonSerializable
     }
 
 
-    public static function fromArray(array $a): self
+    public function getLinkParams(): array
     {
-        return new self($a['namespace'], $a['name'], $a['value'] ?? null);
+        return [
+            'namespace' => $this->namespace,
+            'name' => $this->name
+        ];
+    }
+
+    public static function fromArray(array $a): static
+    {
+        return new static($a['namespace'], $a['name'], $a['value'] ?? null);
     }
 }
